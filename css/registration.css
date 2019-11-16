@@ -1,0 +1,169 @@
+body{
+	margin:0;
+	padding: 0;
+	background:transparent;
+}
+img{
+	width:50%;
+	display: block;
+}
+.container1{
+	display: flex;
+
+	width:85%;
+	margin: 0 auto;
+	margin-top: 6rem;
+}
+
+.inner-flex{
+	display: flex;
+
+}
+h2{
+	width: 100%;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 1rem;
+}
+.box{
+	text-align: center;
+	width:60%;
+	margin: 0 auto;
+	/*background: rgba(16,16,49,0.8);*/
+	border-radius: 5px;
+}
+
+.input{
+	width: 96%;
+	padding-top: 10px;
+	font-size: 16px;
+	color: #fff;
+	margin: 0.5rem;
+	border:none;
+	border-bottom:1px solid #fff;
+	outline: none;
+	background: transparent;
+	margin-right: 4rem;
+	
+
+}
+.inputbox{
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.inputbox label{
+	margin-left: 10px;
+	position: absolute;
+	top: 0;
+	left:0;
+	padding: 18px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: 0.35s;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label
+{
+	top:-25px;
+	left: 0;
+	color: #03a9f4;
+	/*font-size: 12px;*/	
+}
+
+.submit{
+	padding:1rem 2rem;
+	border:none;
+	outline: none;
+	border:1px solid #fff;
+	background:transparent;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+	margin: 10px 0;
+	transition: background 0.5s;
+}
+
+.submit:hover{
+	background-color: white;
+	color: black;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.topic-box{
+	width:100%;
+	text-align: center;
+}
+
+@media (max-width: 768px)
+{	.container1{
+	flex-direction: column;
+	width: 90%;
+	margin-top: 4rem;
+}
+img{
+	margin: 0 auto;
+}
+
+	/*.inner-flex{
+		flex-direction: column;
+	}*/
+	.box{
+		text-align: center;
+		width:90%;
+	}
+	h2{
+		width:90%;
+	}
+
+	.topic-box{
+		margin: 0 auto;
+	}
+
+	.topic-box h2{
+		text-align: center;
+    margin: 0 auto;
+	}
+	form{
+		margin-top: 1rem;
+	}
+	.inner-flex{
+		flex-direction: column;
+	}
+}
+/*
+input:-internal-autofill-selected {
+    background-color: transparent!important;
+    background-image: none !important;
+    color: rgb(255, 255, 255) !important;
+}*/
+/*input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: #FFF;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}

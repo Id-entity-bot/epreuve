@@ -1,0 +1,38 @@
+.wrapper .intro,
+.wrapper section{
+	position: relative;
+}
+
+.right-arrow,
+.left-arrow{
+	position: absolute;
+    top: 48%;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.right-arrow{
+	right: 1.5%;
+}
+
+.left-arrow{
+	left: 1.5%;
+}
+
+.right-arrow:hover{
+	right: 0.5%;
+}
+
+
+.left-arrow:hover{
+	left: 0.5%;
+}
+
+@media (max-width: 768px){
+	.right-arrow,
+	.left-arrow{
+		display: none;
+	}
+}

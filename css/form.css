@@ -1,0 +1,131 @@
+body{
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	height: 100vh;
+}
+
+.inner-flex{
+	display: flex;
+
+}
+h2{
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	margin-bottom: 2rem;
+}
+.box{
+	text-align: center;
+	width:50%;
+	margin: 0 auto;
+	/*background: rgba(0,0,0,0.8);*/
+	border-radius: 5px;
+	padding: 2rem;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input{
+	width: 96%;
+	padding: 10px 10px;
+	font-size: 16px;
+	color: #fff;
+	margin: 0.5rem;
+	border:none;
+	border:1px solid #fff;
+	border-radius: 1rem;
+	outline: none;
+	background: transparent;
+	margin-right: 4rem;
+	
+
+}
+.inputbox{
+	position: relative;
+	margin-bottom: 2.5rem;
+}
+.inputbox label{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-left: 21px;
+	position: absolute;
+	top: 0;
+	left:0;
+	padding: 18px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label
+{
+	top:-40px;
+	left: 0;
+	/*color: #03a9f4;*/
+	/*font-size: 12px;*/	
+}
+
+.submit{
+	padding:1rem 2rem;
+	border:none;
+	outline: none;
+	border:1px solid #fff;
+	background:transparent;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
+	margin: 10px 0;
+	transition: background 0.5s;
+}
+
+.submit:hover{
+	background-color: white;
+	color: black;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.forgot-password{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.forgot-password a{
+	color: white;
+	margin-right: 2rem;
+    margin-top: -1rem;
+    text-decoration: none;
+    transition:0.2s;
+}
+
+.forgot-password a:hover,
+.forgot-password a:focus{
+	text-decoration: underline;
+}
+
+
+@media (max-width: 768px)
+{
+	.box{
+		width:85%;
+	}
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: #FFF;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
