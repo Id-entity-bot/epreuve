@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>registration page</title>
+	<!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/parallax.css">
+	<link rel="stylesheet" type="text/css" href="css/registration.css">
+  <link rel="stylesheet" href="./sweetalert/sweetalert.min.css" rel="stylesheet">
+	
+
+</head>
+<body>
+	<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+	 <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#page-top" style="text-transform: uppercase;letter-spacing: 1px;">epreuve</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="index.html#rule">Rules</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="index.html#sponsor">Sponsors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="index.html#contact">contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="privacypolicy.html">privacy policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="login.html">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="registration.html">registration</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+	<div class="container1">
+
+		<img src="img/mask.png">
+		<div class="box">
+    <div class="topic-box">
+      <h2>registration</h2>
+    </div>
+		
+		<form>
+      <div id="error"></div><br>
+		<div class="inner-flex">
+			<div class="inputbox">
+      <input type="text" name="oname" id="oname" class="input" required="">
+      <label>name</label>
+    </div>
+      <div class="inputbox">
+			<input type="text" name="username" id="username" class="input" required="">
+			<label >username(for game)</label>
+		</div>
+		
+		</div>
+		<div class="inputbox">
+      <input type="text" name="institute" id="institute" class="input" required="">
+      <label>institute</label>
+    </div>	
+		<div class="inner-flex">
+			<div class="inputbox">
+			<input type="text" name="email" id="email" class="input" required="">
+			<label>email</label>
+		</div>
+		<div class="inputbox">
+			<input type="number" name="phone" id="phone" class="input" required="">
+			<label>phone</label>
+		</div>
+		</div>
+		
+		<div class="inputbox">
+			<input type="text" name="address" id="address" class="input" required="" >
+			<label>address *(Important for sending gifts ... )</label>
+		</div>
+		<div class="inner-flex">
+      <div class="inputbox">
+      <input type="password" name="password" id="password" class="input" required="">
+      <label>password</label>
+    </div>
+    <div class="inputbox">
+      <input type="password" name="cpassword" id="cpassword"  class="input" required="">
+      <label>confirm password</label>
+    </div>
+  </div>
+    
+    <!-- <input type="submit" class="submit" name="" id="#signup"> -->
+    <button class="submit" id="signup">Register</button>
+		
+		
+	</form>
+	</div>
+	</div>
+	<script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="lib/counterup/jquery.counterup.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/typed/typed.min.js"></script>
+  <script type="text/javascript" src="js/epreuve.js"></script>
+  <script type="text/javascript" src="./sweetalert/sweetalert.min.js" type="text/javascript"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+	
+  <script>
+    
+    $(document).ready(function(){
+      $("#username").focusout(function(){
+       var username=$("#username").val();
+       var link_user = "name="+username;
+        $.ajax({
+            // url: 'http://www.epreuve.in/check_username.php',
+            url: './check_user_name.php',
+            type: 'post',
+            data:link_user,
+            success: function(response) {
+        $("#error").html(response);
+      }
+            });
+        });
+     });
+
+   $(document).ready(function(){
+      $("#phone").focusout(function(){
+       var phone=$("#phone").val();
+       if(phone.length != 10){
+       $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding: 6px;color: white;\">Not a valid phone number</div>");
+     }
+     else{
+       $("#error").html("<div style=\"background-color:#4dff88;height:40px;padding : 6px;\">Valid phone number</div>");
+     } 
+        });
+     });
+   
+     $(document).ready(function(){
+      $("#email").focusout(function(){
+       var email=$("#email").val();
+       var atpos = email.indexOf("@");
+        var dotpos = email.lastIndexOf(".");  
+       var link_email = "email="+email;
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) {
+              $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Not a valid email address</div>");
+              return false;
+          }
+          else{
+            $.ajax({
+                //url: 'http://www.epreuve.in/check_email.php',
+                url: 'check_email.php',
+                type: 'post',
+                data:link_email,
+                success: function(response) {
+            $("#error").html(response);
+          }
+                });
+          }
+        });
+     });
+
+
+
+$(document).ready(function(){
+  $("#signup").click(function(){
+        //fbq('track', 'CompleteRegistration');
+     var user_data="oname="+$("#oname").val()+ "&uname="+$("#username").val()+"&email="+$("#email").val()+"&pass="+$("#password").val()+"&cpass="+$("#cpassword").val()+"&college="+$("#institute").val()+"&phone="+$("#phone").val()+"&add="+$("#address").val();
+     console.log(user_data);
+    $.ajax({
+          url: 'signup_action.php',
+          data:user_data,
+          type: 'post',
+          success: function(response) {
+          console.log(response);
+          dataArr = JSON.parse(response);
+
+      // $("#error").html(response);
+
+      // if (response == '<center><div style=\"border-radius:5px;border-width:10px;border-color:#00b33c;color:green;background-color:#4dff88;height:40px;margin-top:auto;margin-bottom:auto;padding : 10px;\">Successfully Registered.You will be redirected to Login Page shortly.</div></center>')
+      if (dataArr["status"] == "registration done") {
+          // swal("Registration Successful !", ": )", "success");
+          // window.location.assign('login.php');
+
+          setTimeout(function() {
+              swal({
+                  title: "Registration done !!",
+                  text: "Thanks",
+                  type: "success"
+              }, function() {
+                  window.location = "login.php";
+              });
+          }, 1000);
+          return true;
+        }
+      else if (dataArr["status"]=="something wrong") 
+      {
+        $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Something went wrong. Please try again..</div>");
+      return false;
+      }
+      else if (dataArr["status"]=="username exists") 
+      {
+       $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Username already exists</div>");
+      return false; 
+      }
+      else if (dataArr["status"]=="email exists") 
+      {
+       $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Email already exists</div>");
+      return false; 
+      }
+      else if (dataArr["status"]=="password not match") 
+      {
+       $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Password didn't match</div>");
+      return false; 
+      }
+      else if (dataArr["status"]=="field empty") 
+      {
+       $("#error").html("<div style=\"background-color:#ff6666;height:40px;padding : 6px;color:white;\">Fields cannot be empty</div>");
+      return false; 
+      }
+
+    }
+          });
+    return false;
+        });
+
+});
+  </script>
+
+</body>
+</html>
